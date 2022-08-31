@@ -1,4 +1,5 @@
 from django.db import models
+from core.mixins.models import AuthorWithTimeMixin
 
 class Category(models.Model):
        name = models.CharField(max_length=200)
@@ -9,7 +10,7 @@ class Category(models.Model):
        class Meta:
               db_table = "categories"
               
-class Brand(models.Model):
+class Brand(AuthorWithTimeMixin):
        name = models.CharField(max_length=200)
        slug = models.SlugField(max_length=200, unique=True)
        
@@ -19,7 +20,7 @@ class Brand(models.Model):
        class Meta:
               db_table = "brands"
 
-class Unit(models.Model):
+class Unit(AuthorWithTimeMixin):
        name = models.CharField(max_length=20)
        
        def __str__(self) -> str:
@@ -28,7 +29,7 @@ class Unit(models.Model):
        class Meta:
               db_table = "units"
 
-class Tag(models.Model):
+class Tag(AuthorWithTimeMixin):
        name = models.CharField(max_length=150)
        slug = models.SlugField(max_length=150)
        
@@ -38,7 +39,7 @@ class Tag(models.Model):
        class Meta:
               db_table = "tags"
        
-class Product(models.Model):
+class Product(AuthorWithTimeMixin):
        title = models.CharField(max_length=200)
        slug = models.SlugField(max_length=200, unique=True)
        meta = models.CharField(max_length=255, null=True, blank=True)
