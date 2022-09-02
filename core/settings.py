@@ -41,7 +41,7 @@ DJ_APPS = [
 
 
 CUSTOM_APPS = [
-    'product'
+    'store'
 ]
 
 THIRDPARTY_APPS = []

@@ -1,7 +1,7 @@
 from django.db import models
 from core.mixins.models import AuthorWithTimeMixin
 
-class Category(models.Model):
+class Category(AuthorWithTimeMixin):
        name = models.CharField(max_length=200)
        slug = models.SlugField(max_length=200, unique=True)
        

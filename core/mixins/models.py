@@ -14,7 +14,7 @@ class TimeStampMixin(models.Model):
        class Meta:
               abstract = True
               
-class AuthorWithTimeMixin(UserForeignKey, TimeStampMixin):
+class AuthorWithTimeMixin(UserForeignKeyMixin, TimeStampMixin):
        pass 
 
        class Meta:
